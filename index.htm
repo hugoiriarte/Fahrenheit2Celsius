@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+ 
+
+      Author: Hugo Iriarte
+      Date:   6/11/18
+
+      Filename: index.htm
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <!--Page Title-->
+   <title>Temp Converter</title>
+   <!--Linking style sheet -->
+   <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+   <header>
+	<!--Page H1 -->
+      <h1>
+         Temperature Converter
+      </h1>
+   </header>
+
+   <article>
+		<!--H2 explaining what website main function -->
+      <h2>Fahrenheit (&#176; F) to Celsius (&#176; C) converter</h2>
+      <form>
+          <fieldset>
+			<!-- label for user input-->
+            <label for="fValue">
+              Enter temp in &#176; F
+            </label>
+			<!--User input and saved with ID -->
+            <input type="number" id="fValue" />
+          </fieldset>
+          <fieldset>
+			<!--Button that will run computation -->
+            <button type="button" id="button">Convert to &#176; C</button>
+          </fieldset>
+          <fieldset>
+			<!--Echos calculation -->
+             <p>Temp in &#176; C</p>
+            <p id="cValue">&nbsp;</p>
+          </fieldset>
+     </form>
+   </article>
+   <script>
+   <!--Only function that computes calculation from Fahrenheit to Celsius -->
+	function tempConvert( ) {
+		var degF = document.getElementById("fValue").value;
+		var degC = (degF - 32) * (5/9);
+		document.getElementById("cValue").innerHTML = degC;
+	}
+	<!--Ties the function with the button -->
+    document.getElementById("button").addEventListener("click", tempConvert, false)  
+   </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
